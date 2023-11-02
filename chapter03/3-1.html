@@ -1,0 +1,54 @@
+<script>
+  console.log('문제 1번')
+  const x = 10
+  if(x > 4) {
+    console.log('참입니다.')
+  }
+
+  console.log('문제 2번')
+  const a = Number(prompt('첫 번째 숫자', ''))
+  const b = Number(prompt('두 번째 숫자', ''))
+
+  if(a > b) {
+    alert('첫 번째로 입력한 숫자가 더 크다')
+  } else if(a === b) {
+    alert('두 숫자가 같습니다.')
+  } else {
+    alert(' 두 번째로 입력한 숫자가 더 크다.')
+  }
+
+  console.log('문제 3번')
+  const y = 15
+  if(y>10 && y<20) {
+    console.log('조건에 맞습니다.')
+  }
+
+  console.log('문제 4번')
+  const c = Number(prompt('숫자를 입력해주세요.',''))
+  if(c<0)
+    alert('음수')
+  else if (c>0)
+    alert('양수')
+  else 
+    alert(0)
+
+  console.log('문제 5번')
+  const d = Number(prompt('숫자를 입력해주세요.',''))
+  if(d % 2 === 0) {
+    alert('짝수입니다.')
+  } else {
+    alert('홀수입니다.')
+  }
+
+  console.log('문제 6번')
+  const e = Number(prompt('월을 입력해주세요',''))
+  if(3 <= e && e <= 5) {
+    alert('봄')
+  } else if(6<= e && e <= 8) {
+    alert('여름')
+  } else if(9 <= e && e <= 11) {
+    alert('가을')
+  } else {
+    alert('겨울')
+  }
+</script>
