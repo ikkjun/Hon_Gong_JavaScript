@@ -1,0 +1,18 @@
+<html>
+<head>
+  <script>
+    for(let i=0;true;i++) {
+      alert( i + '번째 반복문입니다.')
+
+      // 진행 여부를 물어본다.
+      const isContinue = confirm('계속 진행하시겠습니까?')
+      if(!isContinue) {
+        break
+      }
+    }
+
+    // 프로그램 종료를 확인
+    alert('프로그램 종료')
+  </script>
+</head>
+</html>
