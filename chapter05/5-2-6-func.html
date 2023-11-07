@@ -1,0 +1,22 @@
+<html>
+<head>
+  <script>
+    const myForEach = function(배열, 콜백함수) {
+      for(let i  = 0; i<배열.length; i++) {
+        const element = 배열[i];
+        콜백함수(i,element, 배열)
+      }
+    }
+
+    const myFilter = function(배열, 콜백함수) {
+      let output = []
+      for(let i = 0; i<배열.length; i++) {
+        const element = 배열[i];
+        if(콜백함수(i, element, 배열)) {
+          output.push(element)
+        }
+      }
+    }
+  </script>
+</head>
+</html>

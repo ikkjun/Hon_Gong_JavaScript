@@ -1,0 +1,63 @@
+<html>
+<head>
+  <script>
+    console.log('문제 1')
+    const multiplyAll = function(start, end) {
+      let output = 1
+      for(let i = start; i<=end; i++){
+        output *= i
+      }
+      return output
+    }
+
+    console.log('문제 2')
+    console.log((1))
+    const max1 = function(array) {
+      let output = array[0]
+      for(let i = 1; i<array.length;i++) {
+        if(output < array[i]) {
+          output = array[i]
+        }
+      }
+      return output
+    }
+    console.log(max1([1,2,3,4]))
+
+    console.log((2))
+    const max2 = function(...array) {
+      let output = array[0]
+      for(let i = 1; i<array.length;i++) {
+        if(output < array[i]) {
+          output = array[i]
+        }
+      }
+      return output
+    }
+    console.log(max2(1,2,3,4))
+
+    console.log((3))
+    const max3 = function(첫번째요소, ...나머지) {
+      if(Array.isArray(첫번째요소)) {
+        let output = 첫번째요소[0]
+        for(let i = 1; i<첫번째요소.length;i++) {
+          if(output < 첫번째요소[i]) {
+            output = 첫번째요소[i]
+          }
+        }
+      return output
+      } else {
+        let output = 첫번째요소
+        for(let i = 1; i<나머지.length;i++) {
+          if(output < 나머지[i]) {
+            output = 나머지[i]
+          }
+        }
+      return output
+      }
+    }
+    console.log(max3([1,2,3,4]))
+    console.log(max3(1,2,3,4))
+
+  </script>
+</head>
+</html>

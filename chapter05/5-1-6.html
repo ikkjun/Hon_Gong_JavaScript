@@ -1,0 +1,19 @@
+<html>
+<head>
+  <script>
+    let arr = [52, 273, 32, 103, 275, 24, 57]
+    const min = function(배열) {
+      let tmp = arr[0]
+      for(let i=1;i<arr.length;i++) {
+        if(tmp>arr[i]) {
+          tmp = arr[i]
+        }
+      }
+      return tmp
+    }
+
+    console.log(min(arr))
+
+  </script>
+</head>
+</html>
