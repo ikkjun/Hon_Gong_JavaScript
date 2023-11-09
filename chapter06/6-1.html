@@ -1,0 +1,35 @@
+<script>
+  console.log('1번 문제')
+  const book = {
+    name: '혼자 공부하는 파이썬',
+    price: 18000,
+    publisher: '한빛미디어'
+  }
+</script>
+<script>
+  console.log('2번 문제')
+  console.log('3( or 객체.속성 = 값)')
+</script>
+<script>
+  console.log('3번 문제')
+  console.log('1. delete 객체[속성]')
+</script>
+<script>
+  const object = {
+    ko: '빵',
+    en: 'bread',
+    fr: 'pain',
+    es: 'pan',
+    lang: {
+      ko: '한국어',
+      en: '영어',
+      fr: '프랑스어',
+      es: '스페인어'
+    },
+    print: function(lang) {
+      console.log(`${this.ko}은 ${this.lang[lang]}로 ${this[lang]}입니다.`)
+    }
+  }
+  
+  object.print('es')
+</script>
