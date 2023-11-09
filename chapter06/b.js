@@ -1,1 +1,0 @@
-alert('ALERT! 경고!')
