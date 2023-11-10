@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const divs = document.querySelectorAll('div')
+      divs.forEach((div,key) => {
+        div.style.backgroundColor =  `rgb(${key * 25.6},${key * 25.6},${key * 25.6})`
+        div.style.height = '10px'
+        console.log(div.style.height)
+      })
+    })
+  </script>
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</body>
+</html>

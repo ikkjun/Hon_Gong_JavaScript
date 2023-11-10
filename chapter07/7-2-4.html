@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const input = document.querySelector('input')
+      // const button = document.querySelector('button')
+      const p = document.querySelector('p')
+      
+      // 값을 추출할 때 value 속성 사용한다.
+      // keydown → keypress → 입력양식에 값이 들어감! → keyup
+      // 입력양식을 활용한다면 keyup이벤트를 활용하기
+      // change 이벤트: 입력양식 전체(해당 input태그 전체의 입력)에 값 입력을 마쳤을 때 실행된다. 
+      input.addEventListener('change', () => {
+        p.textContent = `${Number(input.value) * 2.54}cm로 변환되었습니다.`
+      })
+    })
+  </script>
+</head>
+<body>
+  <input type="text" name="" id="">inch<br>
+  <!-- <button>계산</button> -->
+  <p></p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 문서 객체 조작 가능!
+      // 태그 선택자
+      document.querySelector('h1').style.color = 'red'
+      // 아이디 선택자
+      document.querySelector('#header').style.backgroundColor = 'purple'
+      // 클래스 선택자
+      document.querySelector('.center.header').style.textAlign = 'center'
+      // 속성 선택자
+      document.querySelector('[type=text]').style.borderRadius = '10px'
+      // 후손 선택자
+      document.querySelector('body input').style.backgroundColor = 'blue'
+
+      for(const element of document.querySelectorAll('input')) {
+        element.style.backgroundColor = 'red'
+      }
+    })
+  </script>
+</head>
+<body>
+  <h1 id="header" class="center header">안녕하세요!</h1>
+  <input type="text">
+  <input type="checkbox">
+  <input type="checkbox">
+  <input type="checkbox">
+  <input type="search" name="" id="">
+
+</body>
+</html>
