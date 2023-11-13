@@ -1,14 +1,6 @@
-# 07 문서 객체 모델
-## 07-1 문서 객체 조작하기
-
-html, head, body, title, h1, di, span
-- HTML: 요소(element)
-- 자바스크립트: 문서 객체(document object)
-
-문서 객체 모델(Document Object Model → DOM): 문서 객체를 조합하서 만든 전체적인 형태
-
-### DOMContentLoaded 이벤트
-문서 객체 조작할 때 DOMContentLoaded 이벤트 사용
+문서 객체 모델
+Document Object Model
+→ DOM
 
 document.body.innerHTML += '<h1></h1>'
 
