@@ -48,10 +48,12 @@
         select.value = 'red'
         input.value = ''
       })
+
       input.addEventListener('keyup', () => {
         data.message = input.value
         save(data)
       })
+      
       select.addEventListener('change', () => {
         const color = select.options[select.selectedIndex].value
         // 입력 양식 반영
