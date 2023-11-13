@@ -52,16 +52,23 @@ ex. h1.parentNode.removeChild(h1)
 
 ### 이벤트 설정하기
 모든 문서 객체는 생성되거나 클릭되거나 마우스를 위에 올리거나 할 때 이벤트가 발생한다. 그리고 이 이벤트가 발생할 때 실행할 함수는 addEventListener() 메소드를 사용한다.
-'''javascript
+
+```javascript
+<script>
 문서 객체.addEventListener(이벤트 이름, 콜백 함수)
-'''
+</script>
+```
+
 
 이벤트가 발생할 때 실행할 콜백 함수를 이벤트 리스너 또는 이벤트 핸들러라고 부른다.
 
 이벤트를 제거할 때는 removeEventListener() 메소드를 사용한다.
-'''javascript
+
+```javascript
+<script>
 문서 객체.removeEventListener(이벤트 이름, 이벤트 리스너)
-'''
+</script>
+```
 
 ## 07-2 이벤트 활용
 ### 이벤트 모델
