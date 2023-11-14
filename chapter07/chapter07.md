@@ -1,6 +1,47 @@
-문서 객체 모델
-Document Object Model
-→ DOM
+- [07 문서 객체 모델](#07-문서-객체-모델)
+  * [07-1 문서 객체 조작하기](#07-1-----------)
+    + [DOMContentLoaded 이벤트](#domcontentloaded----)
+    + [문서 객체 가져오기](#----------)
+    + [글자 조작](#-----)
+    + [속성 조작](#-----)
+    + [스타일 조작](#------)
+    + [문서 객체 생성하기](#----------)
+      - [생성](#--)
+      - [추가](#--)
+    + [문서 객체 이동하기](#----------)
+    + [문서 객체 제거하기](#----------)
+    + [이벤트 설정하기](#--------)
+  * [07-2 이벤트 활용](#07-2-------)
+    + [이벤트 모델](#------)
+    + [키보드 이벤트](#-------)
+    + [이벤트 발생 객체](#---------)
+    + [기본 이벤트 막기](#---------)
+    + [글자 입력 양식 이벤트](#------------)
+      - [1. 버튼](#1---)
+      - [2. 글자 입력](#2------)
+      - [3. 선택](#3---)
+      - [4. 체크박스](#4-----)
+      - [5. 라디오버튼](#5------)
+    + [글자 입력 양식 이벤트](#-------------1)
+    + [드롭다운 목록 활용하기](#------------)
+    + [체크 박스 활용하기](#----------)
+    + [라디오 박스](#라디오-박스)
+    + [좀 더 알아보기](#--------)
+      - [localStorage 객체](#localstorage---)
+
+
+
+# 07 문서 객체 모델
+## 07-1 문서 객체 조작하기
+
+html, head, body, title, h1, di, span
+- HTML: 요소(element)
+- 자바스크립트: 문서 객체(document object)
+
+문서 객체 모델(Document Object Model → DOM): 문서 객체를 조합하서 만든 전체적인 형태
+
+### DOMContentLoaded 이벤트
+문서 객체 조작할 때 DOMContentLoaded 이벤트 사용
 
 document.body.innerHTML += '<h1></h1>'
 
@@ -12,6 +53,15 @@ Uncaught TypeError: Cannot read properties of null (reading 'innerHTML')
 스크립트 태그를 사용할 수 있는 위치
 1. head > script > document.addEventListener('DOMContentLoaded', () => {})
 2. body > script // 맨 마지막 부분
+
+### 문서 객체 가져오기
+document.head
+document.body
+document.title
+
+document.querySelector(선택자)
+document.querySelectorAll(선택자)
+
 
 ### 글자 조작
 textContent
@@ -41,11 +91,57 @@ appendChild()
 문서 객체.parentNode.removeChild(문서 객체)
 ex. h1.parentNode.removeChild(h1)
 
+### 이벤트 설정하기
+모든 문서 객체는 생성되거나 클릭되거나 마우스를 위에 올리거나 할 때 이벤트가 발생한다. 그리고 이 이벤트가 발생할 때 실행할 함수는 addEventListener() 메소드를 사용한다.
+
+```javascript
+<script>
+문서 객체.addEventListener(이벤트 이름, 콜백 함수)
+</script>
+```
+
+
+이벤트가 발생할 때 실행할 콜백 함수를 이벤트 리스너 또는 이벤트 핸들러라고 부른다.
+
+이벤트를 제거할 때는 removeEventListener() 메소드를 사용한다.
+
+```javascript
+<script>
+문서 객체.removeEventListener(이벤트 이름, 이벤트 리스너)
+</script>
+```
+
 ## 07-2 이벤트 활용
 ### 이벤트 모델
+이벤트를 연결하는 방법을 이벤트 모델
+addEventListener() 메소드를 사용하여 이벤트를 연결하는 방법이 표준 이벤트 모델이다.
+onOOO으로 시작하는 속성을 HTML 요소에 직접 넣어서 이벤트를 연결하는 것을 인라인 이벤트 모델이라고 한다.
+```javascript
+<body onkeyup = "listener(event)">
+```
+
+모든 이벤트 모델의 이벤트 리스너는 첫 번재 매개변수로 이벤트 객체를 받는다.
+
 ### 키보드 이벤트
+- keydown
+- keypress
+- keyup
+
+keydown 이벤트와 keypress 이벤트는 웹 브라우저에 따라 아시아권의 문자를 제대로 처리하지 못하는 문제가 있어서 일반적으로는 keyup 이벤트를 사용한다.
+
+#### 키보드 키 코드 사용하기
+- code
+- keyCode
+- altKey
+- ctrlKey
+- shiftKey
+
 ### 이벤트 발생 객체
-### 기본 이벤트 막기
+이벤트 리스너를 외부로 분리하는 경우 이벤트를 발생시킨 객체에 접근하는 방법
+1. event.currentTarget속성을 사용하기
+() => {} 와 function (){} 형태 모두 사용이 가능하다
+2. this 키워드를 사용하기
+화살표 함수가 아닌 function(){} 형태로 함수를 선언한 경우에 사용합니다.
 
 ### 글자 입력 양식 이벤트
 #### 1. 버튼
@@ -53,6 +149,8 @@ ex. h1.parentNode.removeChild(h1)
 #### 3. 선택
 #### 4. 체크박스
 #### 5. 라디오버튼
+
+### 기본 이벤트 막기
 
 ### 글자 입력 양식 이벤트
 값을 추출할 때 value 속성 사용한다.
