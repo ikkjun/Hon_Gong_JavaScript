@@ -1,0 +1,11 @@
+<script>
+  const object = {
+    color: "red",
+    message: "안녕하세요!"
+  }
+  
+  const string = JSON.stringify(object)
+  const other = JSON.parse(string)
+  console.log(other.color)
+  console.log(other.message)
+</script>

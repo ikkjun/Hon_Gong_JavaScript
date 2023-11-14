@@ -75,3 +75,20 @@ localStorage.getItem('키')
 localStorage.setItem('키', '값')
 localStorage.removeItem('키')
 localStorage.clear()  // 전체 제거
+
+## JSON
+Javascript Object Notation
+
+```json
+{
+  "color": "red",
+  "message": "안녕하세요!"
+}
+```
+### 규정
+1. 키는 문자열만
+2. 문자열은 반드시 큰따옴표
+
+### JSON 객체
+JSON.stringify(): 자바스크립트 객체 → JSON 문자열
+JSON.parse(): JSON 문자열 → 자바스크립트 객체
