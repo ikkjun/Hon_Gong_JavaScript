@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function createStudent(이름, 국어, 영어, 수학, 과학) {
+            return {
+                이름: 이름, 국어: 국어, 영어: 영어, 수학: 수학, 과학: 과학,
+                get총점 () {
+                    return this.국어 + this.영어 + this.수학 + this.과학
+                },
+                get평균 () {
+                    return this.get총점() / 4
+                },
+                toString() {
+                    return `${this.이름}\t${this.get총점()}점\t${this.get평균()}점\n`
+                }
+            }
+        }
+        const students = []
+        students.push(createStudent('구름', 87, 98, 88, 90))
+        students.push(createStudent('별이', 92, 98, 96, 88))
+        students.push(createStudent('겨울', 76, 96, 94, 86))
+        students.push(createStudent('바다', 98, 52, 98, 92))
+
+        // 출력
+        let output = '이름\t총점\t평균\n'
+        for (const student of students) {
+            output += student.toString()
+        }
+        
+        console.log(output)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
