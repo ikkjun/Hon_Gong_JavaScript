@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 리액트 사용 준비 -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+      // 애플리케이션 클래스 생성하기
+      class App extends React.Component {
+        // App 컴포넌트 생성할 때 입력한 속성들이 props(properties)로 들어가게 된다.
+        constructor (props) {
+          super(props)  // this.props = props
+        }
+
+        render () {
+          return <div>
+            <h1>{this.props.name}님 안녕하세요!</h1>
+            <img src={this.props.imgUrl} alt="" />
+          </div>
+        }
+      }
+      
+      const container = document.getElementById('root')
+      
+      //출력하기
+      ReactDOM.render(<App name = "아지강" imgUrl="http://placedog.net/500/300" />, container)
+    </script>
+</body>
+</html>

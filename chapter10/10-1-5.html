@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 리액트 사용 준비 -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+      class Timer extends React.Component {
+        constructor (props) {
+          super(props)
+          // 화면에 변화하는 값을 만들 때 this.state 객체 활용
+          this.state = {
+            현재_시간: new Date().toLocaleString()
+          }
+          // 화면에 변화하는 값을 지정하고 반영할 때 this.setState() 
+          
+        }
+        render () {return <h1>{this.state.현재_시간}</h1>}
+
+        componentDidMount () {
+          this.timerId = setInterval(() => {
+            this.setState({ 현재_시간: new Date().toLocaleString() })
+          }, 1000)
+        } 
+        componentWillUnMound () {
+          clearInterval(this.timerId)
+        }
+      }
+      class App extends React.Component {
+        constructor (props) { super(props) }
+        render () { return <Timer /> }
+      }
+      
+      const container = document.getElementById('root')
+      
+      //출력하기
+      ReactDOM.render(<App name = "아지강" imgUrl="http://placedog.net/500/300" />, container)
+    </script>
+</body>
+</html>

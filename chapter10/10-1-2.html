@@ -14,7 +14,22 @@
 
     <!-- 리액트를 사용하는 코드 입력 -->
     <script type="text/babel">
+      // 상수 선언하기
+      const name = '아지강'
+      const imgUrl  = 'http://placedog.net/400/300'
+      const style = {
+        backgroundColor: 'yellow'
+      }
 
+      // 컴포넌트와 컨테이녀 생성하기
+      const component = <div>
+          <h1>{name}님 안녕하세요!</h1>
+          <img src={imgUrl} alt="강아지 사진" />
+        </div>
+      const container = document.getElementById('root')
+      
+      //출력하기
+      ReactDOM.render(component, container)
     </script>
 </body>
 </html>
