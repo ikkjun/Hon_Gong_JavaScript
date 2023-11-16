@@ -23,5 +23,13 @@ this.setState({변경할_속성: 값})
 ### 이벤트 연결하기
 컴포넌트에 이벤트를 연결할 때는 (1) 메소드를 선언하고, (2) 생성자 내에서 메소드에 this를 바인드하고, (3) render() 메소드에서 출력하는 태그의 이벤트 속성에 메소드를 입력해서 이벤트를 연결.
 
+### 스타일 지정하기
+```javascript
+render () {
+  const style = {}
+  return <h1 style = {style}>글자</h1>
+}
+```
+
 ## React 추가 공부할 내용
 React 기본서 + react flux pattern
