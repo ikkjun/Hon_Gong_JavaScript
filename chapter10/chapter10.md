@@ -31,5 +31,9 @@ render () {
 }
 ```
 
+## 10-2 리액트와 데이터
+### 여러 개의 컴포넌트 사용하기
+### 부모에서 자식의 state 속성 변경하기
+
 ## React 추가 공부할 내용
 React 기본서 + react flux pattern
